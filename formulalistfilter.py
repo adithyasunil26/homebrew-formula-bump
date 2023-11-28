@@ -14,7 +14,7 @@ print("Number of formulas = "+str(np.size(a)))
 
 
 # Put names of formulas to remove manually in this array
-manual_removal_formulas=['redwax-tool']
+manual_removal_formulas=['']
 
 print("Removing manually selected formulas")
 for i in manual_removal_formulas:
@@ -32,7 +32,7 @@ for i in tqdm(op):
     if i!='':
         l=i.split(": ")
         if l[0]!='':
-            if l[1] in ['unversioned','latest','discontinued','deprecated','versioned','disabled'] or l[0] in ['Error','Warning','git','fatal'] or l[1].startswith('skipped - '):
+            if l[1] in ['unversioned','latest','discontinued','deprecated','versioned','disabled'] or l[0] in ['Error','Warning','git','fatal','curl'] or l[1].startswith('skipped - '):
                 auto_removal_formulas.append(l[0])
 
 print("Removing automatically filtered formulas")
